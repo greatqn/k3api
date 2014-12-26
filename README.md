@@ -14,6 +14,10 @@ VB代理DLL
 C#调用
 
 
+参考：
+http://wenku.baidu.com/link?url=qqPtjiwwbT369CBTVD9boa0ThBBe2fp_BnEm1FW9PGPmN-5zv4pWdatiJg4a3QYieieJi-h-d_05zMYl7NCxe6g3fBcU_0EwPjEOuzbCE-i&qq-pf-to=pcqq.c2c
+
+http://download.csdn.net/download/u011350480/5724939
 
 
 
