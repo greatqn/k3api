@@ -10,9 +10,11 @@ Sample 官方示例
 ASP
   凭证CURD
 
-VB代理DLL
-C#调用
-
+JavaClient
+  java客户端，调用ASP提供的http服务。
+  
+搭建了基本框架，调用流程走通。
+后续是业务字段等对接。待续。
 
 参考：
 http://wenku.baidu.com/link?url=qqPtjiwwbT369CBTVD9boa0ThBBe2fp_BnEm1FW9PGPmN-5zv4pWdatiJg4a3QYieieJi-h-d_05zMYl7NCxe6g3fBcU_0EwPjEOuzbCE-i&qq-pf-to=pcqq.c2c
