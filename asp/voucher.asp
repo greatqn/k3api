@@ -1,4 +1,28 @@
-<!--#include file ="init.asp"-->
+<%@ CODEPAGE=65001 %> 
+<% Response.CodePage=65001%> 
+<% Response.Charset="UTF-8" %>
+<%
+ON ERROR RESUME NEXT 
+'On Error Goto 0 '取消错误捕捉
+dim msgcount
+set msgcount = 1
+Function log(msg)
+	response.Write(":"&msg)
+	response.Write("<br>")
+	'set msgcount=msgcount+1
+end Function
+
+Function showError(msg)
+if Err.Number <> 0 Then 
+	log("error: " & msg) 
+	log("错误 Number：" & Err.Number)
+	log("错误信息：" & Err.Description)
+	log("源代码: " & Err.Source)
+	Err.Clear
+end if 
+
+end Function
+%>
 <%
 dim conn
 set conn = server.createobject("adodb.connection")  
@@ -102,21 +126,16 @@ showError("voucher")
     tempEntry("FAmount") = 100
     VoucherEntry.Add tempEntry
 
-    set tempEntry = CreateObject("kfo.Dictionary")
-    tempEntry("FExplanation") = "凭证录入检测-分录2"
-    tempEntry("FAccountID") = Acct2
-    tempEntry("FCurrencyID") = 1
-    tempEntry("FDC") = 0
-    tempEntry("FAmountFor") = 100
-    tempEntry("FAmount") = 100
-    VoucherEntry.Add tempEntry
-    
     Set Voucher("_Entries") = VoucherEntry
 
 showError("VoucherEntry")
     'Dim Cre As Object, VoucherID As Long
-    Set Cre = CreateObject("EBSGLVoucher.VoucherUpdate")
-    VoucherID = Cre.Create(K3Login.PropsString, Voucher)
+VoucherID = 1505
+    Set DelV = CreateObject("EBSGLVoucher.VoucherUpdate")
+    Call DelV.Delete(K3Login.PropsString, VoucherID)
+
+    'Set Cre = CreateObject("EBSGLVoucher.VoucherUpdate")
+    'VoucherID = Cre.Create(K3Login.PropsString, Voucher)
     log("t6:" & VoucherID ) 
 showError("VoucherID")
 
