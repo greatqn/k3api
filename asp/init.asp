@@ -8,7 +8,8 @@ dim msgcount
 msgcount = 1
 Function log(msg)
   response.Write(msgcount&":"&msg)
-  response.Write("<br>")
+  'response.Write("<br>")
+  response.Write(chr(13))
   msgcount=msgcount+1
 end Function
 
@@ -22,4 +23,11 @@ if Err.Number <> 0 Then
 end if 
 
 end Function
+%>
+<%
+
+systemId = 1
+username = "001"
+password = "1234567"
+
 %>

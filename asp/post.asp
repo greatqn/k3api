@@ -1,5 +1,12 @@
 <!--#include file ="init.asp"-->
 <%
-act=Request("a")
-log(act)
+fields=Request("fields")
+values=Request("values")
+
+arrFields = Split(fields,",")
+For I = Lbound(arrFields) to Ubound(arrFields) 
+log(arrFields(I)&I)
+log(Request(arrFields(I)))
+Next
+
 %>
